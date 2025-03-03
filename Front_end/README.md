@@ -11,15 +11,36 @@ A simple React application to generate secure passwords with customizable option
   - Special characters (!@#$%^&*()_+-=[]{}|;:,.<>?)
 - Generate passwords using Enter key or button
 - Clean, modern interface
+- Secure password generation via backend API
+
+## Architecture
+
+This application uses a client-server architecture:
+- Frontend: React-based client application
+- Backend: Separate server handling password generation logic
+  - Ensures better security by keeping generation logic server-side
+  - API endpoint for password generation requests
 
 ## Setup
 
+### Frontend
 1. Clone the repository
 2. Install dependencies:
 ```bash
 npm install
 ```
 3. Start the app:
+```bash
+npm start
+```
+
+### Backend
+1. Navigate to the backend directory
+2. Install dependencies:
+```bash
+npm install
+```
+3. Start the server:
 ```bash
 npm start
 ```
@@ -33,6 +54,29 @@ npm start
 
 ## Built With
 
+Frontend:
 - React
 - Create React App
 - Modern CSS
+
+Backend:
+- Node.js
+- Express
+- Crypto library for secure password generation
+
+## API Documentation
+
+The backend exposes the following endpoint:
+
+`POST /api/generate-password`
+- Request body: 
+  ```json
+  {
+    "length": number,
+    "includeUppercase": boolean,
+    "includeLowercase": boolean,
+    "includeNumbers": boolean,
+    "includeSpecial": boolean
+  }
+  ```
+- Response: Generated password string

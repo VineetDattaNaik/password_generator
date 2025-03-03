@@ -2,7 +2,7 @@ import './App.css';
 import generatePassword from './utils/passwordGenerator';
 import { useState, useEffect } from 'react';
 
-const API_URL = 'http://localhost:5001/api';
+const API_URL = 'https://password-generator-46ri.onrender.com/api';
 
 function App() {
   const [password, setPassword] = useState('');
